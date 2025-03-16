@@ -5,19 +5,17 @@ import { QuestionType } from "../interfaces/question";
 export function ChangeType(): React.JSX.Element {
     const [type, setType] = useState<QuestionType>("short_answer_question");
     function flipType(): void {
-        type === "short_answer_question"
-            ? setType("multiple_choice_question")
-            : setType("short_answer_question");
+        type === "short_answer_question" ?
+            setType("multiple_choice_question")
+        :   setType("short_answer_question");
     }
     return (
         <div>
             <Button onClick={flipType}>Change Type</Button>
             <span>
-                {type === "short_answer_question" ? (
+                {type === "short_answer_question" ?
                     <div>Short Answer</div>
-                ) : (
-                    <div>Multiple Choice</div>
-                )}
+                :   <div>Multiple Choice</div>}
             </span>
         </div>
     );

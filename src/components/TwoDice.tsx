@@ -33,15 +33,11 @@ export function TwoDice(): React.JSX.Element {
                 Roll Right
             </Button>
             <span data-testid="right-die">{dice2}</span>
-            {dice1 === dice2 ? (
-                dice1 !== 1 ? (
+            {dice1 === dice2 ?
+                dice1 !== 1 ?
                     <div>Win</div>
-                ) : (
-                    <div>Lose</div>
-                )
-            ) : (
-                <></>
-            )}
+                :   <div>Lose</div>
+            :   <></>}
         </div>
     );
 }

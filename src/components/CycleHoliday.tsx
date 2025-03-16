@@ -9,14 +9,14 @@ export function CycleHoliday(): React.JSX.Element {
         "🐰": "🎂",
         "🎂": "🎃",
         "🎃": "🎅",
-        "🎅": "♥️"
+        "🎅": "♥️",
     };
     const Alphabet_Transition: Record<Holiday, Holiday> = {
         "🎂": "🎅",
         "🎅": "🐰",
         "🐰": "🎃",
         "🎃": "♥️",
-        "♥️": "🎂"
+        "♥️": "🎂",
     };
 
     const [holiday, setHoliday] = useState<Holiday>("♥️");
