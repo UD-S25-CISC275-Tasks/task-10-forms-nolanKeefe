@@ -9,15 +9,17 @@ export function MultipleChoiceQuestion({
     expectedAnswer: string;
 }): React.JSX.Element {
     const [Answer, setAnswer] = useState<string>(options[0]);
+
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
         setAnswer(event.target.value);
     }
+
     return (
         <div>
             <h3>Multiple Choice Question</h3>
             <Form.Group controlId="userEmotions">
                 <Form.Label>Question?</Form.Label>
-                <Form.Select value={options} onChange={updateAnswer}>
+                <Form.Select value={options[0]} onChange={updateAnswer}>
                     {options.map((option: string) => (
                         <option key={option} value={option}>
                             {option}
