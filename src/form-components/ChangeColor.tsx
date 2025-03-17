@@ -21,7 +21,11 @@ export function ChangeColor(): React.JSX.Element {
                 {colors.map((c) => (
                     <label
                         key={c}
-                        style={{ marginRight: "10px", cursor: "pointer" }}
+                        style={{
+                            marginRight: "10px",
+                            cursor: "pointer",
+                            backgroundColor: c,
+                        }}
                     >
                         <input
                             type="radio"
@@ -37,19 +41,17 @@ export function ChangeColor(): React.JSX.Element {
                     </label>
                 ))}
             </div>
-            <p>You have chosen:</p>
-            <div
-                data-testid="colored-box"
-                style={{
-                    backgroundColor: color,
-                    padding: "10px",
-                    color: "white",
-                    display: "inline-block",
-                    borderRadius: "5px",
-                    fontWeight: "bold",
-                }}
-            >
-                {color}
+            <div>
+                You have chosen{" "}
+                <span
+                    data-testid="colored-box"
+                    style={{
+                        backgroundColor: color,
+                    }}
+                >
+                    {color}
+                </span>
+                .
             </div>
         </div>
     );
